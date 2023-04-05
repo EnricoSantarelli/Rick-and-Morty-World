@@ -1,4 +1,4 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+This GitHub repository is designed to practice front-end development using Next.js and clean architecture, creating a website based on characters from the popular TV show "Rick and Morty" with the help of "The Rick and Morty API".
 
 ## Getting Started
 
