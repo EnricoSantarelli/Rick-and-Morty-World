@@ -1,8 +1,8 @@
 import { Character } from "@/@clean/domain/entities/character";
-import { CharacterLocalStorageRepository } from "@/@clean/infra/repositories/character_local_storage_repository";
+import { CharacterRepository } from "@/@clean/infra/repositories/character_repository";
 
 export class CreateCharacterUsecase {
-constructor(private repo: CharacterLocalStorageRepository) {}
+constructor(private repo: CharacterRepository) {}
 
   execute(character: Character): Character {
     this.repo.createCharacter(character);

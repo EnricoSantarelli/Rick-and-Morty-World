@@ -1,10 +1,10 @@
 import { Character } from "@/@clean/domain/entities/character";
-import { CharacterLocalStorageRepository } from "@/@clean/infra/repositories/character_local_storage_repository";
+import { CharacterRepository } from "@/@clean/infra/repositories/character_repository";
 
 export class GetAllCharactersUsecase {
-    constructor(private repo: CharacterLocalStorageRepository) {}
+    constructor(private repo: CharacterRepository) {}
 
-    execute(): Character[] {
+    async execute(): Promise<Character[]> {
         return this.repo.getAllCharacters();
     }
 }
