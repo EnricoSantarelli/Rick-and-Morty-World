@@ -7,7 +7,13 @@ export default function UsersPage() {
 
   return (
     <div>
-      <p>{characters.length}</p>
+      {characters.map((character) => {
+        return (
+          <div key={character.id}>
+            <p>{`Personagem: ${character.name}`}</p>
+          </div>
+        );
+      })}
     </div>
   );
 }

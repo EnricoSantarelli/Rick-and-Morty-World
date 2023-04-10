@@ -6,7 +6,7 @@ export class CharacterRepository implements ICharacterRepository {
     constructor(private readonly http: AxiosInstance) {}
 
     getAllCharacters(): Promise<Character[]> {
-      return this.http.get('/characters')
+      return this.http.get('/character')
         .then((response) => {
           const characters = response.data.results;
           return characters;
