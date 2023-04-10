@@ -4,17 +4,37 @@ import { Character } from "@/@clean/domain/entities/character";
 import { container, Registry } from "@/@clean/infra/container_registry";
 import { GetAllCharactersUsecase } from "@/@clean/application/character/get_all_characters_usecase";
 import { CreateCharacterUsecase } from "@/@clean/application/character/create_character_usecase";
+import { STATUS } from "@/@clean/domain/enums/status_enum";
+import { GENDER } from "@/@clean/domain/enums/gender_enum";
 
 export type CharacterContextProvider = {
   characters: Character[];
   getAllCharacters: () => void;
-  createCharacter: (character: Character) => void;
+  createCharacter: (
+    newId: number,
+    newName: string,
+    newStatus: STATUS,
+    newSpecies: string,
+    newType: string,
+    newGender: GENDER,
+    newOrigin: string,
+    newImage: string
+  ) => void;
 };
 
 const defaultContext: CharacterContextProvider = {
   characters: [],
   getAllCharacters: async () => {},
-  createCharacter: (character: Character) => {},
+  createCharacter: (
+    newId: number,
+    newName: string,
+    newStatus: STATUS,
+    newSpecies: string,
+    newType: string,
+    newGender: GENDER,
+    newOrigin: string,
+    newImage: string
+  ) => {},
 };
 
 export const CharacterContext = createContext(defaultContext);
@@ -31,13 +51,30 @@ export function CharacterProvider({ children }: PropsWithChildren) {
 
   function getAllCharacters() {
     getAllCharactersUsecase.execute().then((characters) => {
-      console.log(characters);
       setCharacters(characters);
     });
   }
 
-  function createCharacter(character: Character) {
-    createCharacterUsecase.execute(character);
+  function createCharacter(
+    newId: number,
+    newName: string,
+    newStatus: STATUS,
+    newSpecies: string,
+    newType: string,
+    newGender: GENDER,
+    newOrigin: string,
+    newImage: string
+  ) {
+    const character = createCharacterUsecase.execute(
+      newId,
+      newName,
+      newStatus,
+      newSpecies,
+      newType,
+      newGender,
+      newOrigin,
+      newImage
+    );
     setCharacters([...characters, character]);
   }
 
