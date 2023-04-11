@@ -7,7 +7,7 @@ import { AxiosInstance } from "axios";
 export class CharacterRepository implements ICharacterRepository {
     constructor(private readonly http: AxiosInstance) {}
 
-    async getAllCharacters(): Promise<Character[]> {
+    async getCharacters(): Promise<Character[]> {
       return this.http.get('/character')
         .then((response) => {
           const characters = response.data.results;

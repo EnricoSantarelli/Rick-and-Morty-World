@@ -15,8 +15,6 @@ export type CharacterProps = {
 export class Character {
     constructor(public props: CharacterProps) {
 
-        //constructor of the entity calling all validation functions
-
         if (!Character.validateId(props.id)) {
             throw new Error("Invalid id");
         }
@@ -59,8 +57,6 @@ export class Character {
         this.props.image = props.image
     }
 
-    //getters of the properties
-
     get id() {
         return this.props.id;
     }
@@ -93,7 +89,6 @@ export class Character {
         return this.props.image;
     }
 
-    //setters of the properties
 
     set id(id: number) {
         if (!Character.validateId(id)) {
@@ -106,6 +101,7 @@ export class Character {
         if (!Character.validateName(name)) {
             throw new Error("Invalid name");
         }
+        this.props.name = name;
     }
 
     set status(status: STATUS) {
@@ -126,27 +122,30 @@ export class Character {
         if (!Character.validateType(type)) {
             throw new Error("Invalid type");
         }
+        this.props.type = type;
     }
 
     set gender(gender: GENDER){
         if (!Character.validateGender(gender)) {
             throw new Error("Invalid gender");
         }
+        this.props.gender = gender;
     }
 
     set origin(origin: string) {
         if (!Character.validateOrigin(origin)) {
             throw new Error("Invalid origin");
         }
+        this.props.origin = origin;
     }
 
     set image(image: string) {
         if (!Character.validateImage(image)) {
             throw new Error("Invalid image");
         }
+        this.props.image = image;
     }
     
-    //validations of the properties
 
     static validateId(id: number) {
         if (id == null){
@@ -200,11 +199,8 @@ export class Character {
     static validateType(type: string) {
         if (type == null){
             return false;
-        }
-        else if(type.length < 2){
-            return false;
-        }
-        else if(typeof(type) != "string"){
+        } 
+        if(typeof(type) != "string"){
             return false;
         }
         return true
