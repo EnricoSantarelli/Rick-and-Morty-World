@@ -1,9 +1,10 @@
-import "reflect-metadata";
+import 'reflect-metadata';
+
 import { Container } from "inversify";
 import { http } from "./http";
-import { CharacterRepository } from "./repositories/character_repository";
 import { CreateCharacterUsecase } from "../application/character/create_character_usecase";
 import { GetCharactersUsecase } from "../application/character/get_characters_usecase";
+import { CharacterRepository } from "./repositories/character_repository";
 
 export const Registry = {
     AxiosAdapter: Symbol.for('AxiosAdapter'),

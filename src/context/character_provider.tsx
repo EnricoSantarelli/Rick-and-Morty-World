@@ -7,7 +7,7 @@ import { STATUS } from "@/@clean/domain/enums/status_enum";
 import { GENDER } from "@/@clean/domain/enums/gender_enum";
 import { GetCharactersUsecase } from "@/@clean/application/character/get_characters_usecase";
 
-export type CharacterContextProvider = {
+export type CharacterContextType = {
   characters: Character[];
   getCharacters: () => void;
   createCharacter: (
@@ -22,7 +22,7 @@ export type CharacterContextProvider = {
   ) => void;
 };
 
-const defaultContext: CharacterContextProvider = {
+const defaultContext: CharacterContextType = {
   characters: [],
   getCharacters: () => {},
   createCharacter: (
