@@ -1,0 +1,34 @@
+@import '../../styles/base.scss';
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 14px;
+    margin-right: 32px;
+    margin-left: 32px;
+}
+
+.header__logo {
+    width: 60px;
+    height: 20px;
+}
+
+.header__div {
+    width: 148px;
+    height: 12px; 
+    display: flex;
+    justify-content: space-between;
+}
+
+.header__link {
+    font-family: $primary-font;
+    font-size: 10px;
+    font-weight: 800;
+    text-decoration: none;
+    transition: color 0.2s ease-in-out;
+    color: $black-color;
+}
+
+.header__link:hover {
+    color: $primary-color;
+}
