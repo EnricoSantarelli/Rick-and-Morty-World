@@ -1,4 +1,3 @@
-import { GetCharactersUsecase } from "@/@clean/application/character/get_all_characters_usecase";
 import { Character } from "@/@clean/domain/entities/character";
 import { GENDER } from "@/@clean/domain/enums/gender_enum";
 import { STATUS } from "@/@clean/domain/enums/status_enum";

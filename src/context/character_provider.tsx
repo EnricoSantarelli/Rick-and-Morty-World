@@ -2,10 +2,10 @@
 import { createContext, PropsWithChildren, useEffect, useState } from "react";
 import { Character } from "@/@clean/domain/entities/character";
 import { container, Registry } from "@/@clean/infra/container_registry";
-import { GetCharactersUsecase } from "@/@clean/application/character/get_all_characters_usecase";
 import { CreateCharacterUsecase } from "@/@clean/application/character/create_character_usecase";
 import { STATUS } from "@/@clean/domain/enums/status_enum";
 import { GENDER } from "@/@clean/domain/enums/gender_enum";
+import { GetCharactersUsecase } from "@/@clean/application/character/get_characters_usecase";
 
 export type CharacterContextProvider = {
   characters: Character[];
@@ -24,7 +24,7 @@ export type CharacterContextProvider = {
 
 const defaultContext: CharacterContextProvider = {
   characters: [],
-  getCharacters: async () => {},
+  getCharacters: () => {},
   createCharacter: (
     newId: number,
     newName: string,
@@ -84,7 +84,7 @@ export function CharacterProvider({ children }: PropsWithChildren) {
 
   return (
     <CharacterContext.Provider
-      value={{ characters, getCharacters: getCharacters, createCharacter }}
+      value={{ characters, getCharacters, createCharacter }}
     >
       {children}
     </CharacterContext.Provider>
