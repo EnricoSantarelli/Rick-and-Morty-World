@@ -1,4 +1,4 @@
-@import '../../styles/base.scss';
+@import '../../styles/base.module.scss';
 
 .header {
     display: flex;
@@ -12,6 +12,11 @@
 .header__logo {
     width: 60px;
     height: 20px;
+    transition: filter 0.2s ease-in-out;
+}
+
+.header__logo:hover {
+    filter: brightness(0.8);
 }
 
 .header__div {
@@ -35,7 +40,7 @@
     color: $primary-color;
 }
 
-@media (min-width: 425px) and (max-width: 768px) {
+@media (min-width: 426px) and (max-width: 768px) {
     .header__logo{
         width: 81px;
         height: 28px;

@@ -1,4 +1,3 @@
-import React, { useContext } from "react";
 import Image from "next/image";
 import logo from "@/app/assets/logo.svg";
 import styles from "./header.module.scss";
@@ -14,6 +13,7 @@ export default function Header() {
           width={10}
           height={10}
           className={styles.header__logo}
+          priority
         />
       </Link>
       <div className={styles.header__div}>
