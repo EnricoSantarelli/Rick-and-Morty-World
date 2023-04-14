@@ -1,9 +1,23 @@
 @import '../../styles/base.module.scss';
 
 .carousel_card{ 
-    width: 312px;
-    height: 188px;
+    width: 262px;
+    height: 158px;
     border-radius: 15px;
     background-color: $background_color;
+}
+
+@media (min-width: 426px) and (max-width: 768px) {
+    .carousel_card{ 
+        width: 312px;
+        height: 188px;
+    }
+}
+
+@media (min-width: 769px) {
+    .carousel_card{ 
+        width: 312px;
+        height: 188px;
+    }
 }
 
