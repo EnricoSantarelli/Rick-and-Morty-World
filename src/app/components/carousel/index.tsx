@@ -1,30 +1,20 @@
 import React, { useContext } from "react";
 import { CharacterContext } from "@/contexts/character_provider";
 import styles from "./carousel.module.scss";
-import { Navigation, Pagination } from "swiper";
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/grid";
+import CarouselComponent from "better-react-carousel";
 
 export default function Carousel() {
   const { characters } = useContext(CharacterContext);
 
   return (
-    <Swiper
-      modules={[Navigation, Pagination]}
-      navigation
-      slidesPerView={"auto"}
-      spaceBetween={50}
-      grid={{ rows: 2, fill: "column" }}
-      centeredSlides={true}
-      className={styles.carousel}
-    >
+    <CarouselComponent cols={5} rows={2} gap={10} loop autoplay={3000}>
       {characters.map((character) => (
-        <SwiperSlide key={character.id} className={styles.carousel_card}>
-          <h1>{character.name}</h1>
-        </SwiperSlide>
+        <CarouselComponent.Item key={character.id}>
+          <div className={styles.carousel_card}>
+            <h1>{character.name}</h1>
+          </div>
+        </CarouselComponent.Item>
       ))}
-    </Swiper>
+    </CarouselComponent>
   );
 }
