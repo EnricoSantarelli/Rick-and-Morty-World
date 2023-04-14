@@ -1,11 +1,14 @@
 "use client";
-import React, { useContext } from "react";
-import { CharacterContext } from "@/context/character_provider";
+import Carousel from "../components/carousel";
+import styles from "./characters.module.scss";
 
 export default function CharactersPage() {
-  const { characters } = useContext(CharacterContext);
-
   return (
-    <h1>Characters</h1>
+    <div>
+      <div className={styles.characters__header}>
+        <h1 className={styles.characters__title}>Characters</h1>
+      </div>
+      <Carousel />
+    </div>
   );
 }
