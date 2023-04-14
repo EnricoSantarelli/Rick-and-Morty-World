@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 import logo from "@/app/assets/logo.svg";
 import Image from "next/image";
-import { CharacterProvider } from "@/context/character_provider";
+import { CharacterProvider } from "@/contexts/character_provider";
 import "normalize.css/normalize.css";
 import Header from "./components/header";
 import styles from "./styles/base.module.scss";

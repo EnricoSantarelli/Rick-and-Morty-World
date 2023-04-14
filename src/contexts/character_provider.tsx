@@ -46,12 +46,25 @@ const createCharacterUsecase = container.get<CreateCharacterUsecase>(
   Registry.CreateCharacterUsecase
 );
 
+const getInitialState = () => {
+  var characters = null;
+  if (typeof window !== "undefined") {
+    characters = localStorage.getItem("characters");
+  }
+  return characters ? JSON.parse(characters) : [];
+};
+
 export function CharacterProvider({ children }: PropsWithChildren) {
-  const [characters, setCharacters] = useState<Character[]>([]);
+  const [characters, setCharacters] = useState<Character[]>(getInitialState);
 
   function getCharacters() {
     getCharactersUsecase.execute().then((characters) => {
-      setCharacters(characters);
+      setCharacters(() => {
+        if (typeof window !== "undefined") {
+          localStorage.setItem("characters", JSON.stringify(characters));
+        }
+        return characters;
+      });
     });
   }
 
@@ -75,7 +88,9 @@ export function CharacterProvider({ children }: PropsWithChildren) {
       newOrigin,
       newImage
     );
-    setCharacters([...characters, character]);
+    setCharacters((characters) => {
+      return [...characters, character];
+    });
   }
 
   useEffect(() => {
