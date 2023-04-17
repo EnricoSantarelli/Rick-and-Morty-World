@@ -1,4 +1,4 @@
-import { Character } from "@/@clean/domain/entities/character";
+import { Character, Origin } from "@/@clean/domain/entities/character";
 import { GENDER } from "@/@clean/domain/enums/gender_enum";
 import { STATUS } from "@/@clean/domain/enums/status_enum";
 import { ICharacterRepository } from "@/@clean/domain/repositories/character_repository_interface";
@@ -19,7 +19,7 @@ export class CharacterRepository implements ICharacterRepository {
     
       return characters;
     }
-    createCharacter(newId: number, newName: string, newStatus: STATUS, newSpecies: string, newType: string, newGender: GENDER, newOrigin: string, newImage: string): Character {
+    createCharacter(newId: number, newName: string, newStatus: STATUS, newSpecies: string, newType: string, newGender: GENDER, newOrigin: Origin, newImage: string): Character {
       return new Character({
         id: newId,
         name: newName,

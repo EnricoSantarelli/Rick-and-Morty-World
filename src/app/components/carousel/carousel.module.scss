@@ -1,23 +1,96 @@
 @import '../../styles/base.module.scss';
 
-.carousel_card{ 
-    width: 262px;
-    height: 158px;
+.carousel{
+    margin-top: 16px
+}
+
+.carousel__card{
+    display: flex;
+    flex-direction: row; 
     border-radius: 15px;
+    height: 158px;
     background-color: $background_color;
 }
 
+.carousel__image{
+    width: 150px;
+    height: 150px;
+    border: 5px solid $secondary-color;
+}
+
+.carousel__attributes{
+    display: flex;
+    flex: 1;
+    margin: 2px 16px;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.carousel__name{
+    align-self: center;
+    grid-area: name;
+    font-family: $primary-font;
+    font-size: 12px;
+    color: $white-color;
+}
+
+.carousel__title{
+    font-family: $primary-font;
+    font-size: 14px;
+    color: $secondary-color;
+}
+
+.carousel__div{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+.carousel__status{
+    align-self: flex-end;
+}
+
+.carousel__alive{
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: $green-color;
+}
+
+.carousel__dead{
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: $red-color;
+}
+
+.carousel__unknown{
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: $grey-color;
+}
+
 @media (min-width: 426px) and (max-width: 768px) {
-    .carousel_card{ 
-        width: 312px;
-        height: 188px;
+    .carousel__card{ 
+        border-radius: 15px;
+        height: 158px;
+    }
+    
+    .carousel__image{
+        width: 150px;
+        height: 150px;
     }
 }
 
 @media (min-width: 769px) {
-    .carousel_card{ 
-        width: 312px;
+    .carousel__card{ 
+        border-radius: 15px;
         height: 188px;
     }
+    
+    .carousel__image{
+        width: 150px;
+        height: 150px;
+    }
 }
-

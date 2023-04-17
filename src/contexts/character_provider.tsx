@@ -1,6 +1,6 @@
 "use client";
 import { createContext, PropsWithChildren, useEffect, useState } from "react";
-import { Character } from "@/@clean/domain/entities/character";
+import { Character, Origin } from "@/@clean/domain/entities/character";
 import { container, Registry } from "@/@clean/infra/container_registry";
 import { CreateCharacterUsecase } from "@/@clean/application/character/create_character_usecase";
 import { STATUS } from "@/@clean/domain/enums/status_enum";
@@ -17,7 +17,7 @@ export type CharacterContextType = {
     newSpecies: string,
     newType: string,
     newGender: GENDER,
-    newOrigin: string,
+    newOrigin: Origin,
     newImage: string
   ) => void;
 };
@@ -32,7 +32,7 @@ const defaultContext: CharacterContextType = {
     newSpecies: string,
     newType: string,
     newGender: GENDER,
-    newOrigin: string,
+    newOrigin: Origin,
     newImage: string
   ) => {},
 };
@@ -75,7 +75,7 @@ export function CharacterProvider({ children }: PropsWithChildren) {
     newSpecies: string,
     newType: string,
     newGender: GENDER,
-    newOrigin: string,
+    newOrigin: Origin,
     newImage: string
   ) {
     const character = createCharacterUsecase.execute(
