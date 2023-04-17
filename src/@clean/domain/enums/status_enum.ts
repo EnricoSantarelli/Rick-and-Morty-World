@@ -1,16 +1,16 @@
 export enum STATUS {
-    ALIVE = 'ALIVE',
-    DEAD = 'DEAD',
-    UNKNOWN = 'UNKNOWN',
+    ALIVE = 'Alive',
+    DEAD = 'Dead',
+    UNKNOWN = 'unknown',
 }
 
 export function toStatusEnum(value: string): STATUS {
     switch (value) {
-        case "ALIVE":
+        case "Alive":
             return STATUS.ALIVE;
-        case "DEAD":
+        case "Dead":
             return STATUS.DEAD;
-        case "UNKNOWN":
+        case "unknown":
             return STATUS.UNKNOWN;
         default:
             throw new Error("Invalid status");
