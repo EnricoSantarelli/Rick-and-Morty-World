@@ -4,6 +4,12 @@
     margin-top: 16px
 }
 
+.swiper-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .carousel__card{
     display: flex;
     align-items: center;

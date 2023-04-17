@@ -25,10 +25,10 @@ export default function Carousel() {
           slidesPerView: 2,
         },
         1025: {
-          slidesPerView: 4,
+          slidesPerView: 3,
         },
         1440: {
-          slidesPerView: 5,
+          slidesPerView: 4,
         },
       }}
     >
