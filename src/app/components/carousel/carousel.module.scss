@@ -1,28 +1,23 @@
 @import '../../styles/base.module.scss';
 
 .carousel{
-    margin-top: 16px
-}
-
-.swiper-wrapper{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    margin-top: 16px;
 }
 
 .carousel__card{
     display: flex;
-    align-items: center;
-    padding: 30px 8px;
     flex-direction: row; 
+    align-items: center;
+    margin: 0px 16px;
+    padding: 2px 8px; 
     border-radius: 15px;
     height: 158px;
     background-color: $background_color;
 }
 
 .carousel__image{
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
     border: 5px solid $secondary-color;
 }
 
@@ -39,14 +34,14 @@
     font-weight: 600;
     grid-area: name;
     font-family: $primary-font;
-    font-size: 20px;
+    font-size: 14px;
     color: $primary-color;
 }
 
 .carousel__title{
     font-family: $primary-font;
     font-weight: 700;
-    font-size: 20px;
+    font-size: 14px;
     color: $secondary-color;
     margin: 4px 0px;
 }
@@ -60,7 +55,16 @@
 .carousel__gender{
     display: flex;
     flex-direction: column;
-    gap: 1px;
+}
+
+.carousel__origin{
+    display: flex;
+    flex-direction: column;
+}
+
+.carousel__species{
+    display: flex;
+    flex-direction: column;
 }
 
 .carousel__status{
@@ -72,22 +76,22 @@
 }
 
 .carousel__alive{
-    width: 6px;
-    height: 6px;
+    width: 4px;
+    height: 4px;
     border-radius: 50%;
     background-color: $green-color;
 }
 
 .carousel__dead{
-    width: 6px;
-    height: 6px;
+    width: 4px;
+    height: 4px;
     border-radius: 50%;
     background-color: $red-color;
 }
 
 .carousel__unknown{
-    width: 6px;
-    height: 6px;
+    width: 4px;
+    height: 4px;
     border-radius: 50%;
     background-color: $grey-color;
 }
@@ -95,42 +99,57 @@
 .carousel__span{
     font-family: $primary-font;
     font-weight: 600;
-    font-size: 14px;
+    font-size: 10px;
     color: $primary-color;
 }
 
 @media (min-width: 426px) and (max-width: 768px) {
-    .carousel__card{ 
-        border-radius: 15px;
-        height: 158px;
+    .carousel__card{
+        padding: 16px 8px; 
+    }
+
+    .carousel__image{
+        width: 100px;
+        height: 100px;
     }
     
-    .carousel__image{
-        width: 150px;
-        height: 150px;
+    .carousel__name{
+        font-size: 16px;
+    }
+    
+    .carousel__title{
+        font-size: 16px;
+    }
+    
+    .carousel__alive{
+        width: 5px;
+        height: 5px;
+    }
+    
+    .carousel__dead{
+        width: 5px;
+        height: 5px;
+    }
+    
+    .carousel__unknown{
+        width: 5px;
+        height: 5px;
+    }
+    
+    .carousel__span{
+        font-size: 12px;
     }
 }
 
 @media (min-width: 769px) {
-    .carousel{
-        margin-top: 16px
-    }
-    
+
     .carousel__card{
-        padding: 30px 8px;
-        border-radius: 15px;
-        height: 158px;
+        padding: 16px 8px; 
     }
     
     .carousel__image{
-        width: 150px;
-        height: 150px;
-        border: 5px solid $secondary-color;
-    }
-    
-    .carousel__attributes{
-        margin: 2px 16px;
-        gap: 2px;
+        width: 100px;
+        height: 100px;
     }
     
     .carousel__name{
@@ -139,9 +158,7 @@
     
     .carousel__title{
         font-size: 20px;
-        margin: 4px 0px;
     }
-    
     
     .carousel__gender{
         gap: 1px;
@@ -169,4 +186,31 @@
     .carousel__span{
         font-size: 14px;
     }
+}
+
+@media (max-width: 350px) {
+
+    .carousel__card{
+        height: 120px;
+    }
+
+    .carousel__image{
+        width: 50px;
+        height: 50px;
+        border: 4px solid $secondary-color;
+    }
+
+    .carousel__name{
+        font-size: 12px;
+    }
+    
+    .carousel__title{
+        font-size: 12px;
+    }
+
+    
+    .carousel__span{
+        font-size: 8px;
+    }
+    
 }
