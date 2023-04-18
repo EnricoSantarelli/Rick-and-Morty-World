@@ -1,7 +1,8 @@
 @import '../../styles/base.module.scss';
 
 .carousel{
-    margin-top: 16px;
+    display: block;
+    margin: auto auto;
 }
 
 .carousel__card{
@@ -103,6 +104,46 @@
     color: $primary-color;
 }
 
+.carousel__alert{
+    font-family: $primary-font;
+    color: $background_color;
+    font-size: 30px;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carousel__search{
+    display: block;
+    margin: 50px auto;
+    width: 289px;
+    height: 30px;
+    border-radius: 15px;
+    background-color: $background_color;
+    box-shadow: none;
+    border: none;
+    font-family: $primary-font;
+    font-size: 14px;
+    color: $secondary-color;
+    font-weight: 600;
+    padding: 0 10px;
+}
+
+.carousel__search::placeholder{
+    font-family: $primary-font;
+    font-size: 14px;
+    color: $secondary-color;
+    font-weight: 600;
+    opacity: 0.5;
+}
+
+.carousel__search:focus{
+    outline: $primary-color solid 0.5px;
+}
+
+
+
 @media (min-width: 426px) and (max-width: 768px) {
     .carousel__card{
         padding: 16px 8px; 
@@ -138,6 +179,34 @@
     
     .carousel__span{
         font-size: 12px;
+    }
+
+    .carousel__alert{
+        font-size: 40px;
+    }
+
+    .carousel__search{
+        display: block;
+        margin: 50px auto;
+        width: 509px;
+        height: 44px;
+        border-radius: 15px;
+        background-color: $background_color;
+        box-shadow: none;
+        border: none;
+        font-family: $primary-font;
+        font-size: 16px;
+        color: $secondary-color;
+        font-weight: 600;
+        padding: 0 10px;
+    }
+    
+    .carousel__search::placeholder{
+        font-family: $primary-font;
+        font-size: 16px;
+        color: $secondary-color;
+        font-weight: 600;
+        opacity: 0.5;
     }
 }
 
@@ -186,6 +255,36 @@
     .carousel__span{
         font-size: 14px;
     }
+
+    .carousel__alert{
+        font-size: 46px;
+    }
+
+    
+    .carousel__search{
+        display: block;
+        margin: 50px auto;
+        width: 613px;
+        height: 53px;
+        border-radius: 15px;
+        background-color: $background_color;
+        box-shadow: none;
+        border: none;
+        font-family: $primary-font;
+        font-size: 18px;
+        color: $secondary-color;
+        font-weight: 600;
+        padding: 0 10px;
+    }
+    
+    .carousel__search::placeholder{
+        font-family: $primary-font;
+        font-size: 18px;
+        color: $secondary-color;
+        font-weight: 600;
+        opacity: 0.5;
+    }
+    
 }
 
 @media (max-width: 350px) {
@@ -212,5 +311,6 @@
     .carousel__span{
         font-size: 8px;
     }
+
     
 }
