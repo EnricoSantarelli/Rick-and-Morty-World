@@ -14,6 +14,11 @@
     border-radius: 15px;
     height: 158px;
     background-color: $background_color;
+    transition: filter 0.2s ease-in-out;
+}
+
+.carousel__card:hover{
+    filter: brightness(0.8);
 }
 
 .carousel__image{
@@ -128,6 +133,7 @@
     color: $secondary-color;
     font-weight: 600;
     padding: 0 10px;
+    transition: filter 0.2s ease-in-out;
 }
 
 .carousel__search::placeholder{
@@ -139,6 +145,10 @@
 }
 
 .carousel__search:focus{
+    outline: $primary-color solid 0.5px;
+}
+
+.carousel__search:hover{
     outline: $primary-color solid 0.5px;
 }
 
