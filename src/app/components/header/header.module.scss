@@ -1,0 +1,73 @@
+@import '../../styles/base.module.scss';
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 14px;
+    margin-right: 32px;
+    margin-left: 32px;
+}
+
+.header__logo {
+    width: 60px;
+    height: 20px;
+    transition: filter 0.2s ease-in-out;
+}
+
+.header__logo:hover {
+    filter: brightness(0.8);
+}
+
+.header__div {
+    width: 148px;
+    height: 12px; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header__link {
+    font-family: $primary-font;
+    font-size: 10px;
+    font-weight: 800;
+    text-decoration: none;
+    transition: color 0.2s ease-in-out;
+    color: $black-color;
+}
+
+.header__link:hover {
+    color: $primary-color;
+}
+
+@media (min-width: 426px) and (max-width: 768px) {
+    .header__logo{
+        width: 81px;
+        height: 28px;
+    }
+
+    .header__div{
+        width: 250px;
+        height: 16px; 
+    }
+
+    .header__link {
+        font-size: 14px;
+    }
+}
+
+@media (min-width: 769px) {
+    .header__logo{
+        width: 197px;
+        height: 68px;
+    }
+
+    .header__div{
+        width: 493px;
+        height: 23px; 
+    }
+
+    .header__link {
+        font-size: 20px;
+    }
+}

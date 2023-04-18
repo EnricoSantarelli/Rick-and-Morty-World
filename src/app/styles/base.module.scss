@@ -1,0 +1,36 @@
+$primary-color: #42B4CA;
+$secondary-color: #BFDE42;
+$background-color: #193840;
+$white-color: #FFFFFF;
+$black-color: #000000;
+$green-color: #00FF00;
+$red-color: #FF0000;
+$grey-color: #808080;
+$primary-font: 'Roboto', sans-serif;
+
+.page{
+    overflow: hidden;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.home__logo{
+    align-self: center;
+    width: 304px;
+    height: 104px; 
+}
+
+@media (min-width: 426px) and (max-width: 768px) {
+    .home__logo{
+        width: 533px;
+        height: 182px;
+    }
+}
+
+@media (min-width: 769px) {
+    .home__logo{
+        width: 741px;
+        height: 253px;
+    }
+}
