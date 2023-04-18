@@ -1,5 +1,10 @@
-import { GENDER } from "../enums/gender_enum";
-import { STATUS } from "../enums/status_enum";
+import { GENDER, toGenderEnum } from "../enums/gender_enum";
+import { STATUS, toStatusEnum } from "../enums/status_enum";
+
+export interface Origin {
+    name: string;
+    url: string;
+  }
 
 export type CharacterProps = {
     id: number;
@@ -8,7 +13,7 @@ export type CharacterProps = {
     species: string;
     type: string;
     gender: GENDER;
-    origin: string;
+    origin: Origin;
     image: string;
 }
 
@@ -18,43 +23,45 @@ export class Character {
         if (!Character.validateId(props.id)) {
             throw new Error("Invalid id");
         }
-        this.props.id = props.id
+        this.props.id = props.id;
 
         if (!Character.validateName(props.name)) {
             throw new Error("Invalid name");
         }
-        this.props.name = props.name
-
-        if (!Character.validateStatus(props.status)) {
+        this.props.name = props.name;
+        
+        const status = toStatusEnum(props.status)
+        if (!Character.validateStatus(status)) {
             throw new Error("Invalid status");
         }
-        this.props.status = props.status
+        this.props.status = status;
 
         if (!Character.validateSpecies(props.species)) {
             throw new Error("Invalid species");
         }
-        this.props.species = props.species
+        this.props.species = props.species;
 
         if (!Character.validateType(props.type)) {
             throw new Error("Invalid type");
         }
-        this.props.type = props.type
-
-        if (!Character.validateGender(props.gender)) {
+        this.props.type = props.type;
+        
+        const gender = toGenderEnum(props.gender)
+        if (!Character.validateGender(gender)) {
             throw new Error("Invalid gender");
         }
-        this.props.gender = props.gender 
+        this.props.gender = gender;
 
         if (!Character.validateOrigin(props.origin)) {
             throw new Error("Invalid origin");
         }
-        this.props.origin = props.origin
+        this.props.origin = props.origin;
 
         if (!Character.validateImage(props.image)) {
             throw new Error("Invalid image");
         }
 
-        this.props.image = props.image
+        this.props.image = props.image;
     }
 
     get id() {
@@ -132,7 +139,7 @@ export class Character {
         this.props.gender = gender;
     }
 
-    set origin(origin: string) {
+    set origin(origin: Origin) {
         if (!Character.validateOrigin(origin)) {
             throw new Error("Invalid origin");
         }
@@ -216,14 +223,8 @@ export class Character {
         return true
     }
 
-    static validateOrigin(origin: string) {
+    static validateOrigin(origin: Origin) {
         if (origin == null){
-            return false;
-        }
-        else if(origin.length < 2){
-            return false;
-        }
-        else if(typeof(origin) != "string"){
             return false;
         }
         return true

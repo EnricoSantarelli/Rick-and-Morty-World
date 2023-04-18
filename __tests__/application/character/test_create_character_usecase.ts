@@ -12,7 +12,7 @@ test('Test create character usecase', () => {
     const repo = new CharacterRepository(http);
     const usecase = new CreateCharacterUsecase(repo);
 
-    const character = usecase.execute(1, "Pickle Rick", STATUS.ALIVE, "Human", "Just a human pickle", GENDER.MALE, "Earth", "https://ibb.co/2ZkhWkcg");
+    const character = usecase.execute(1, "Pickle Rick", STATUS.ALIVE, "Human", "Just a human pickle", GENDER.MALE, {"name":"Earth (Replacement Dimension)","url":"https://rickandmortyapi.com/api/location/20"}, "https://ibb.co/2ZkhWkcg");
 
     expect(character).toBeInstanceOf(Character);
 });
