@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import logo from "@/app/assets/logo.svg";
+import logo from "@/app/assets/logo_rick_and_morty_world.svg";
 import Image from "next/image";
 import { CharacterProvider } from "@/contexts/character_provider";
 import "normalize.css/normalize.css";
