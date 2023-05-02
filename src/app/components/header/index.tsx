@@ -21,7 +21,7 @@ export default function Header() {
           alt="Rick and Morty World Logo"
           width={10}
           height={10}
-          className={styles.header__logo}
+          className={styles.home__icon}
           priority
         />
         <Image
