@@ -1,3 +1,4 @@
+"use client";
 import { ReactNode } from "react";
 import logo from "../app/assets/logo_rick_and_morty_world.svg";
 import Image from "next/image";
