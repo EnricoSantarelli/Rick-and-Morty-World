@@ -1,5 +1,5 @@
 import Image from "next/image";
-import logo from "../../assets/logo_rick_and_morty_world.svg";
+import logo from "../../assets/logo_linkedin.svg";
 import styles from "./header.module.scss";
 import Link from "next/link";
 
