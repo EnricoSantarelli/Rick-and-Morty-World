@@ -1,5 +1,6 @@
+"use client";
 import { ReactNode } from "react";
-import logo from "../app/assets/logo_rick_and_morty_world.svg";
+import logo from "../app/assets/logo_rick_and_morty_world_main.svg";
 import Image from "next/image";
 import { CharacterProvider } from "@/contexts/character_provider";
 import "normalize.css/normalize.css";
@@ -14,9 +15,9 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           <Header />
           <Image
             src={logo}
-            alt="Rick and Morty World logo"
-            width={550}
-            height={200}
+            alt="Rick and Morty World Logo"
+            width={10}
+            height={10}
             className={styles.home__logo}
             priority
           />
