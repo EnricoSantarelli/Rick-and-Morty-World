@@ -9,7 +9,7 @@ export default function Header() {
       <Link href="/">
         <Image
           src={logo}
-          alt="Rick and Morty World logo"
+          alt="Linkedin logo"
           width={100}
           height={30}
           className={styles.header__logo}
