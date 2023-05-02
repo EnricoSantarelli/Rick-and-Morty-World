@@ -1,5 +1,5 @@
 import Image from "next/image";
-import logo from "@/app/assets/logo_rick_and_morty_world.svg";
+import logo from "../../assets/logo_rick_and_morty_world.svg";
 import styles from "./header.module.scss";
 import Link from "next/link";
 
@@ -10,8 +10,8 @@ export default function Header() {
         <Image
           src={logo}
           alt="Rick and Morty World logo"
-          width={10}
-          height={10}
+          width={100}
+          height={30}
           className={styles.header__logo}
           priority
         />
