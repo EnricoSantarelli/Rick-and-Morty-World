@@ -1,5 +1,5 @@
 import Image from "next/image";
-import logo from "../../assets/logo_linkedin.svg";
+import logo from "../../assets/logo_rick_and_morty_world.svg";
 import styles from "./header.module.scss";
 import Link from "next/link";
 
@@ -9,7 +9,7 @@ export default function Header() {
       <Link href="/">
         <Image
           src={logo}
-          alt="Linkedin logo"
+          alt="Rick and Morty World Logo"
           width={100}
           height={30}
           className={styles.header__logo}
