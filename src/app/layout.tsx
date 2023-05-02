@@ -15,8 +15,8 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           <Image
             src={logo}
             alt="Rick and Morty World logo"
-            width={550}
-            height={200}
+            width={10}
+            height={10}
             className={styles.home__logo}
             priority
           />
