@@ -1,0 +1,77 @@
+@import '../styles/base.module.scss';
+
+.create{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 180px
+}
+
+.create__header{
+    margin-top: 32px;
+    width: 100%;
+    height: 46px;
+    background-color: $background-color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.create__title{
+    font-size: 30px;
+    font-weight: 700;
+    font-family: $primary-font;
+    color: $secondary-color;
+}
+
+.create__card{
+    display: flex;
+    flex-direction: row; 
+    align-items: center;
+    margin: 0px 16px;
+    padding: 2px 8px; 
+    border-radius: 15px;
+    height: 220px;
+    width: 80%;
+    background-color: $background_color;
+    transition: filter 0.2s ease-in-out;
+}
+
+@media (min-width: 426px) and (max-width: 768px) {
+    .create{
+        gap: 100px;
+    }
+
+    .create__header{
+        margin-top: 50px;
+        height: 60px;
+    }
+
+    .create__title{
+        font-size: 40px;
+    }
+
+    .create__card{
+        height: 300px;
+    }
+}
+
+@media (min-width: 769px) {
+    .create{
+        gap: 50px;
+    }
+
+    .create__header{
+        margin-top: 50px;
+        height: 68px;
+    }
+
+    .create__title{
+        font-size: 46px;
+    }
+
+    .create__card{
+        height: 300px;
+        width: 50%;
+    }
+}

@@ -5,8 +5,6 @@ import Carousel from "../components/carousel";
 import styles from "./characters.module.scss";
 
 export default function CharactersPage() {
-  const { characters } = useContext(CharacterContext);
-
   return (
     <div>
       <div className={styles.characters__header}>

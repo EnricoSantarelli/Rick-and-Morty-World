@@ -18,7 +18,7 @@ export default function Header() {
 />
       </Link>
       <div className={styles.header__div}>
-        <Link className={styles.header__link} href="/create_character">
+        <Link className={styles.header__link} href="/create">
           Create
         </Link>
         <Link className={styles.header__link} href="/characters">
