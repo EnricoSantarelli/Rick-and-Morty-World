@@ -1,6 +1,4 @@
 "use client";
-import { useContext } from "react";
-import { CharacterContext } from "@/contexts/character_provider";
 import Carousel from "../components/carousel";
 import styles from "./characters.module.scss";
 
